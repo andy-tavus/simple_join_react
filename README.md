@@ -1,23 +1,23 @@
-# Daily.co Direct Stream Subscription React App
+# Tavus.io Direct Stream Subscription React App
 
-This React application is designed to connect to a Daily.co video call room and directly subscribe to the audio and video streams of participants. Unlike the traditional method of embedding a call in an iframe, this approach allows you to have more control over how the video and audio are displayed, enabling custom user interface designs and interactions.
+This React application is designed to connect to a Tavus.io video call room and directly subscribe to the audio and video streams of participants. Unlike the traditional method of embedding a call in an iframe, this approach allows you to have more control over how the video and audio are displayed, enabling custom user interface designs and interactions.
 
 ## Overview
 
 At a high level, this app does the following:
 
-1. **Setup**: Initializes a Daily.co call object with specific configurations to manage audio and video streams.
+1. **Setup**: Initializes a Tavus.io call object with specific configurations to manage audio and video streams.
 2. **Subscription**: Manually subscribes to the audio and video streams of participants as they join the call.
 3. **Display**: Uses HTML5 video and audio elements to render the streams directly in the browser.
-4. **Interaction**: Provides a simple interface for users to join a room by entering a room ID.
+4. **Interaction**: Provides a simple interface for users to join a room by entering a conversation ID.
 
 ## Prerequisites
 
 Before you start, ensure you have the following:
 
 - **Node.js**: Make sure Node.js is installed on your system to run the app.
-- **Daily.co Account**: You need a Daily.co account to create and manage video call rooms.
-- **Room URL**: Obtain a room URL from your Daily.co dashboard.
+- **Tavus.io Account**: You need a Tavus.io account to create and manage video call rooms.
+- **Conversation URL**: Obtain a conversation URL from your Tavus.io dashboard.
 - **React Knowledge**: Basic understanding of React and JavaScript will be helpful.
 
 ## Installation
@@ -29,21 +29,21 @@ To get started with the app, follow these steps:
 ```bash
 npm install
 ```
-This command installs all necessary packages, including the Daily.co SDK and React.
+This command installs all necessary packages, including the Tavus.io SDK and React.
 
 ## Key Dependencies
 
 The app relies on the following key packages:
 
-- `@daily-co/daily-js`: The JavaScript SDK for interacting with Daily.co services.
+- `@daily-co/daily-js`: The JavaScript SDK for interacting with Tavus.io services.
 - `react`: A JavaScript library for building user interfaces.
 - `react-dom`: Provides DOM-specific methods that can be used at the top level of your app.
 
 ## How It Works
 
-### 1. Setting Up the Daily.co Call Object
+### 1. Setting Up the Tavus.io Call Object
 
-The app begins by creating a call object using the Daily.co SDK. This object is configured to handle audio and video streams manually:
+The app begins by creating a call object using the Tavus.io SDK. This object is configured to handle audio and video streams manually:
 
 ```javascript
 const daily = DailyJs.createCallObject({
@@ -109,12 +109,12 @@ To use the app, follow these steps:
 npm start
 ```
 
-2. **Join a Room**: Enter your Daily.co room URL in the input field provided and click "Join Room" or press Enter.
+2. **Join a Room**: Enter your Tavus.io conversation ID in the input field provided and click "Join Room" or press Enter.
 
 ## Important Notes
 
 - **Permissions**: Ensure your browser has permissions to access the camera and microphone.
-- **Room Access**: Verify that your Daily.co room URL is correct and accessible.
+- **Room Access**: Verify that your Tavus.io conversation URL is correct and accessible.
 - **Event Handling**: The app automatically manages participant join and leave events.
 - **Resource Cleanup**: Streams and resources are cleaned up when the component unmounts to prevent memory leaks.
 
@@ -122,12 +122,12 @@ npm start
 
 1. **No Video/Audio Display**
    - Check if browser permissions are granted for camera and microphone.
-   - Ensure the room URL is correct and participants have active streams.
+   - Ensure the conversation URL is correct and participants have active streams.
 
 2. **Connection Issues**
    - Verify your internet connection.
-   - Check the status of Daily.co services.
-   - Ensure you have the correct permissions to access the room.
+   - Check the status of Tavus.io services.
+   - Ensure you have the correct permissions to access the conversation.
 
 ## Best Practices
 
@@ -145,7 +145,7 @@ useEffect(() => {
 2. **Error Handling**: Implement robust error handling to manage unexpected issues:
 ```javascript
 daily.on('error', (error) => {
-  console.error('Daily.co error:', error);
+  console.error('Tavus.io error:', error);
   setError(error.errorMsg);
 });
 ```
